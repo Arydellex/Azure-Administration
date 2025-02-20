@@ -1,0 +1,52 @@
+╔════════════════════════════════════════════════╗
+║             ⚡POWERSHELL COMMANDS ⚡           ║
+║            Portfolio Work Sample               ║
+╚════════════════════════════════════════════════╝
+
+🎯 OBJECTIVE:
+I successfully ran my first PowerShell commands in Azure Cloud Shell, verifying my installation and retrieving system information.
+
+❓ WHY DOES THIS MATTER?
+- 🖥️ **System Verification**: Ensures that PowerShell is correctly installed and functional.  
+- ⚙️ **Platform Identification**: Helps determine the OS and PowerShell version.  
+- 🔄 **Automation Foundation**: Understanding PowerShell is crucial for scripting and automation in IT environments.  
+
+══════════════════════════════════════════════
+📌 USE CASES:
+══════════════════════════════════════════════
+✔️ **Checking PowerShell version before executing scripts**  
+✔️ **Confirming system compatibility for PowerShell commands**  
+✔️ **Accessing system details for troubleshooting**  
+✔️ **Building the foundation for future PowerShell automation**  
+
+══════════════════════════════════════════════
+🛠️ PROJECT COMPLETION STEPS:
+══════════════════════════════════════════════
+
+🔹 1️⃣ SWITCH TO POWERSHELL IN AZURE CLOUD SHELL**
+   - Open **Azure Cloud Shell**  
+   - Select **Switch to PowerShell** and confirm  
+
+🔹 2️⃣ VERIFY POWERSHELL INSTALLATION**
+   ```powershell
+   # Display system information including PowerShell version
+   $PSVersionTable
+✅ This outputs a table containing PSVersion, OS, Platform, and other important system details.
+
+🔹 3️⃣ DISPLAY SPECIFIC VERSION INFORMATION
+
+# Retrieve detailed PowerShell version information
+$PSVersionTable.PSVersion
+
+✅ This returns a table with Major, Minor, and Patch version numbers.
+
+══════════════ 🎯 COMPLETION & LEARNING OUTCOMES: ══════════════ 
+✅ Successfully accessed PowerShell in Azure Cloud Shell
+✅ Verified PowerShell version and platform details
+✅ Learned how to access specific object properties in PowerShell
+✅ Gained fundamental PowerShell command-line experience
+
+🚀 Final Thoughts:
+This example provided a strong introduction to running PowerShell commands in the cloud, setting the stage for advanced automation and scripting in IT environments.
+
+🎯 Mission Accomplished! ✅
