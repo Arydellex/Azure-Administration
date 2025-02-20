@@ -1,0 +1,83 @@
+# Azure Dashboard Management
+
+## Objective
+To create, configure, customize, share, delete, and reset dashboards in the Azure portal, enhancing user experience and efficiency.
+
+## Why does this matter?
+Dashboards in Azure provide a centralized view of resources, metrics, and essential information. Organizing dashboards efficiently improves productivity, monitoring, and accessibility for various roles within an organization.
+
+## Use Cases
+- Custom dashboards for different teams (e.g., Customer Support, Admins, Developers).
+- Quick access to essential resources and metrics.
+- Sharing dashboards for collaboration.
+- Resetting dashboards to maintain a standardized layout.
+
+---
+
+## Steps to Completion
+
+### 1. **Create a New Dashboard**
+1. Open the **Azure portal**.
+2. Select **Show portal menu > Dashboard**.
+3. Click **Create** and select **Custom**.
+4. Rename "My Dashboard" to **Customer Dashboard**.
+
+### 2. **Add and Configure a Clock Tile**
+1. Locate **Clock tile** in the **Tile Gallery** and drag it to the top-right workspace.
+2. Click **Preview**, right-click on the **Clock tile**, and select **Edit**.
+3. Change **Location** to **(UTC-08:00) Pacific Time (US & Canada)**.
+4. Set **Time format** to **24-hour**.
+5. Click **Done** > **Save**.
+6. Repeat the process for **(UTC-05:00) Eastern Time (US & Canada)**, placing it below the first clock.
+
+### 3. **Add and Resize Tiles**
+1. Click **Edit** mode.
+2. Add the **All resources** tile (place in the top left).
+3. Resize **All resources** tile to **6x4**.
+4. Add **Resource groups** tile (below All resources tile).
+5. Add **Metrics chart** tile (to the right of All resources tile).
+6. Add additional tiles:
+   - **Help + Support**
+   - **Microsoft Entra quick tasks**
+   - **Marketplace**
+7. Click **Save**.
+
+### 4. **Clone a Dashboard**
+1. Select **Clone**.
+2. Rename "Clone of Customer Dashboard" to **Microsoft Entra Admin Dashboard**.
+3. Remove the **Resource Groups** tile and **Save**.
+4. Add the following tiles:
+   - **Users and Groups**
+   - **User Sign-in Summary**
+5. Reposition tiles and **Save**.
+
+### 5. **Share a Dashboard** (Sandbox restriction applies)
+1. Select **Share**.
+2. Uncheck **Publish to the 'dashboards' resource group**.
+3. Choose **[sandbox resource group name]** from the dropdown.
+4. Click **Publish** > Close.
+
+### 6. **Delete a Dashboard**
+1. Select **Microsoft Entra Admin Dashboard**.
+2. Click **Delete**.
+3. Confirm deletion by checking the confirmation box > Click **OK**.
+
+### 7. **Reset a Dashboard**
+1. Select **Customer Dashboard**.
+2. Click **Edit**.
+3. Right-click in the workspace > **Reset to default state**.
+4. Confirm reset > Click **Yes** > **Save**.
+5. Sign out and close the browser.
+
+---
+
+## Summary
+You have successfully:
+- Created & customized dashboards
+- Added & resized tiles
+- Cloned, shared, and deleted dashboards
+- Reset dashboards to their default state
+
+This project enhances visibility and efficiency in Azure environments, making dashboard management seamless and effective!
+
+---
