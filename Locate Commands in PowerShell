@@ -1,0 +1,50 @@
+📝 Locate Commands in PowerShell
+🎯 Objective:
+
+The goal of this task was to become familiar with the PowerShell cmdlets by using the Get-Command cmdlet to locate commands related to file management. By the end, I could search for and narrow down commands to perform file operations efficiently. 💻
+🔍 Why Does This Matter?
+
+PowerShell is a powerful automation tool used for managing and automating tasks on a computer or in a cloud environment like Azure. Being able to quickly locate the right cmdlets is key to speeding up development and troubleshooting tasks. 💡
+📂 Use Cases:
+
+    Searching for cmdlets related to file operations.
+    Narrowing down cmdlet results using flags to improve workflow efficiency.
+    Quickly accessing the appropriate tools for managing files in a system.
+
+✅ Steps to Completion:
+🏁 Step 1: Locate Commands with Get-Command
+
+To locate cmdlets related to files, I ran the Get-Command cmdlet with the -Noun flag, specifying File* to find all commands that are related to file operations.
+
+Here’s the command:
+
+Get-Command -Noun File*
+
+The output looked like this:
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-FileHash                                       7.0.0.0    Microsoft.PowerShell.Utility
+Cmdlet          Out-File                                           7.0.0.0    Microsoft.PowerShell.Utility
+Cmdlet          Unblock-File                                       7.0.0.0    Microsoft.PowerShell.Utility
+
+🔍 Step 2: Narrow Down with the -Verb Flag
+
+To refine the results, I added the -Verb flag to the command to search for cmdlets that specifically use the "Get" verb related to files. This allowed me to filter down to a specific category of commands.
+
+Here’s the refined command:
+
+Get-Command -Verb Get -Noun File*
+
+The output now looks like this:
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-FileHash                                       7.0.0.0    Microsoft.PowerShell.Utility
+
+By narrowing the search with both -Noun and -Verb, I was able to quickly identify the cmdlet I needed for getting file hashes. 🔑
+📚 Key Takeaways:
+
+    Use of Get-Command: This cmdlet is extremely helpful for finding available cmdlets installed in the system.
+    Effective Filtering: Combining flags like -Noun and -Verb can help reduce search results and focus on the task at hand.
+    Speeding Up Workflow: Knowing how to narrow searches makes it faster to find the right tool for managing files, and helps improve overall efficiency.
