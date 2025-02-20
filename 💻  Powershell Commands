@@ -1,0 +1,61 @@
+💻 PowerShell Commands
+🎯 Objective:
+
+In this work sample, I learned to run PowerShell commands in the Azure Cloud Shell to verify and explore the installed PowerShell version. This was my first experience working with PowerShell, and I focused on running basic commands to inspect my system setup, helping me understand how PowerShell can be used for managing cloud resources in the future. 🚀
+🔍 Why Does This Matter?
+
+PowerShell is an essential tool for automating and managing tasks on Microsoft Azure and other cloud platforms. By familiarizing myself with PowerShell commands, I gained a deeper understanding of how to interact with the system, configure settings, and automate processes. PowerShell is widely used in IT operations, making it an invaluable skill for sysadmins and cloud professionals. 🖥️
+📂 Use Cases:
+
+    Cloud Resource Management: Managing Azure resources and automating administrative tasks.
+    System Configuration: Verifying system setup and configurations using PowerShell.
+    Automation: Creating scripts to automate routine tasks like system monitoring, configuration checks, and more.
+
+✅ Steps to Completion:
+🖥️ Step 1: Activate Azure Cloud Shell and Switch to PowerShell
+
+I started by opening the Azure Cloud Shell and switched to PowerShell:
+
+    Open the Azure Cloud Shell in the portal.
+    Click Switch to PowerShell and confirm.
+
+Once switched, I was ready to start running PowerShell commands.
+🔍 Step 2: Verify PowerShell Installation
+
+I ran the $PSVersionTable command to verify the installation of PowerShell on my system:
+
+$PSVersionTable
+
+Expected Output:
+
+Name                           Value
+----                           -----
+PSVersion                      7.3.6
+PSEdition                      Core
+GitCommitId                    7.3.6
+OS                             Linux 5.4.0-1058-azure #60~18.04.1-Ubuntu SMP Tue Aug 31 20:34:4…
+Platform                       Unix
+PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0…}
+PSRemotingProtocolVersion      2.3
+SerializationVersion           1.1.0.1
+WSManStackVersion              3.0
+
+This output provided me with information about my PowerShell version (7.3.6), the platform (Linux), and other key details about my environment. 🌐
+🔎 Step 3: Retrieve Specific PowerShell Version Details
+
+To narrow down the information to just the PowerShell version, I ran:
+
+$PSVersionTable.PSVersion
+
+Expected Output:
+
+Major  Minor  Patch  PreReleaseLabel BuildLabel
+-----  -----  -----  --------------- ----------
+7      3      6
+
+This gave me a more concise view of the major, minor, and patch versions of PowerShell. It’s a quick way to confirm the version I am working with. 🛠️
+📚 Key Takeaways:
+
+    PowerShell Basics: Learning to run basic commands in PowerShell is essential for working with cloud environments like Azure.
+    System Information: The $PSVersionTable command is a great tool for checking system and platform details.
+    Versioning: Understanding how to extract specific details about the PowerShell version helps in troubleshooting and ensuring compatibility with scripts or tools.
