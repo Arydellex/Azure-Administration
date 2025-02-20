@@ -1,0 +1,82 @@
+🔷 Assigning Licenses to Users and Groups in Microsoft Entra ID Work Sample
+🎯 Objective:
+
+This work sample demonstrates my ability to manage users, groups, and licenses in Microsoft Entra ID (formerly Azure Active Directory). I created a new user, added them to a security group, and assigned licenses to the group. Additionally, I explored the process of restoring or permanently deleting users.
+❓ Why does this matter?
+
+Efficient user and license management is critical for organizations using Microsoft 365 and Azure services. Assigning licenses to groups instead of individual users simplifies administration and ensures consistent access to resources. Understanding user lifecycle management, including restoration and deletion, is essential for maintaining security and compliance.
+💡 Use cases:
+
+    Automating license assignments for new employees by adding them to groups.
+
+    Restoring accidentally deleted user accounts within the 30-day window.
+
+    Managing access to Microsoft 365 services (e.g., Exchange, SharePoint) through group-based licensing.
+
+🛠️ Steps to completion:
+
+    Create a new user: Added a user named Chris Green to Microsoft Entra ID.
+
+    Create a security group: Created a group named Marketing and added Chris Green as a member.
+
+    Assign a license to the group: Assigned a Microsoft 365 license to the Marketing group.
+
+    Explore user restoration: Reviewed the process for restoring or permanently deleting users.
+
+🚀 Work Sample: Managing Users, Groups, and Licenses
+1. Creating a new user
+
+I created a new user in Microsoft Entra ID with the following details:
+
+    User principal name: ChrisG
+
+    Name: Chris Green
+
+    First name: Chris
+
+    Last name: Green
+
+    Password: A unique, secure password
+
+After creation, I verified that the user Chris Green appeared in the All users list.
+2. Creating a security group
+
+Next, I created a security group named Marketing and added Chris Green as a member. Here are the details:
+
+    Group type: Security
+
+    Group name: Marketing
+
+    Membership type: Assigned
+
+    Owner: My administrator account
+
+    Member: Chris Green
+
+I confirmed that the Marketing group was listed in the All groups section.
+3. Assigning a license to the group
+
+I assigned a Microsoft 365 license to the Marketing group using the Microsoft 365 admin center:
+
+    Navigated to Billing > Licenses in the Microsoft 365 admin center.
+
+    Selected an available license from the list.
+
+    Switched to the Groups view and clicked + Assign license.
+
+    Searched for and selected the Marketing group.
+
+    Clicked Assign to complete the process.
+
+A confirmation message indicated that the license was successfully assigned to the group.
+4. Restoring or deleting a user
+
+I reviewed the process for restoring or permanently deleting users in Microsoft Entra ID:
+
+    Restoration: Deleted users can be restored within 30 days using the Deleted users section in the Microsoft Entra admin center.
+
+    Permanent deletion: After 30 days, users are permanently deleted and cannot be restored.
+
+🎉 Conclusion
+
+This work sample showcases my ability to manage users, groups, and licenses in Microsoft Entra ID. By creating users, assigning them to groups, and managing licenses at the group level, I can streamline administration and ensure efficient access to Microsoft 365 services. Additionally, I understand the importance of user lifecycle management, including restoration and deletion processes.
