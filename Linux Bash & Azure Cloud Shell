@@ -21,11 +21,11 @@ Gain hands-on experience with Linux Bash commands in Azure Cloud Shell, learning
 🛠️ PROJECT STEPS:
 ══════════════════════════════════════════════
 
-🔹 **STEP 1: ACCESS AZURE CLOUD SHELL**
+🔹 STEP 1: ACCESS AZURE CLOUD SHELL**
    - Open Azure Cloud Shell at: 🌐 https://shell.azure.com
    - Select **Bash** as the terminal environment.
 
-🔹 **STEP 2: EXPLORE THE FILE SYSTEM**
+🔹 STEP 2: EXPLORE THE FILE SYSTEM**
 
    ls      # List files and directories
    pwd     # Print current directory path
@@ -55,7 +55,7 @@ cat filename.txt  # Display file contents
 cd ~
 rm -rf .azure/commands/
 
-════════════════════════ 🎯 COMPLETION & LEARNING OUTCOMES: ════════════════════════
+══════════════ 🎯 COMPLETION & LEARNING OUTCOMES: ══════════════
 ✅ Navigate and manipulate files in Linux. 
 ✅ Utilize Bash efficiently for system administration. 
 ✅ Work seamlessly in Azure Cloud Shell.
