@@ -1,0 +1,41 @@
+ 🔎 FILTERING CLI OUTPUT WITH BASH & GREP  
+
+🎯 Objective:
+
+In this work sample, I focused on using the Bash shell and grep command to filter output from the Azure CLI. By filtering the list of available virtual machine sizes, I narrowed down the results to the relevant "DS" VMs, which are popular for data science applications. This demonstrates the power of combining Bash commands with Azure CLI outputs for more efficient system management. ⚙️
+🔍 Why Does This Matter?
+
+System administrators and developers often need to filter through long lists of data to find relevant information. Using tools like Bash and grep helps streamline this process, saving time and ensuring more efficient workflows. In this case, filtering Azure CLI outputs for specific virtual machine types is a practical skill for managing cloud resources. 🌥️
+📂 Use Cases:
+
+    Cloud Resource Management: Filtering and narrowing down Azure virtual machine sizes by type and version.
+    Automation: Creating efficient Bash scripts to automate the management of cloud resources.
+    Data Science: Identifying the specific virtual machine types (e.g., DS VMs) needed for data-heavy applications.
+
+✅ Steps to Completion:
+🖥️ Step 1: List Available Virtual Machines
+
+To get a list of virtual machines available in the westus region of Azure, I used the following command:
+
+az vm list-sizes --location westus --output table
+
+This command outputs a long list of available VM sizes in the westus region, displayed in a readable table format.
+🔎 Step 2: Use Grep to Filter for DS VMs
+
+Next, I used grep to filter this list and show only the virtual machine sizes that include "DS," which are popular for data science applications:
+
+az vm list-sizes --location westus --output table | grep DS
+
+This command pipes the output from the az vm list-sizes command into grep, which filters out lines that don’t contain the string "DS".
+✨ Step 3: Refine the Search for DS V2 VMs
+
+To narrow down the search to only the "DS V2" series (a more recent version of the DS VMs), I used a regular expression with grep:
+
+az vm list-sizes --location westus --output table | grep DS.*_v2
+
+This command filters for lines that match the regular expression DS.*_v2, which looks for any VM sizes that include "DS" followed by "_v2".
+📚 Key Takeaways:
+
+    Piping Commands: Using the pipe (|) allows you to send the output of one command directly into another command, which is powerful for streamlining workflows.
+    Regular Expressions: The grep command can be enhanced with regular expressions to create more complex and precise filters.
+    Efficiency: Combining Bash commands with Azure CLI tools increases efficiency, making it easier to handle cloud resources and manage large datasets.
