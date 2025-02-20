@@ -1,0 +1,80 @@
+╔══════════════════════════════════════════╗
+║  🛠️ TERMINATING A MISBEHAVING PROCESS    ║
+║         Portfolio Project Document       ║
+╚══════════════════════════════════════════╝
+
+🎯 OBJECTIVE:
+I successfully identified and terminated a misbehaving Python process on a Linux system using `ps`, `grep`, and `kill`.
+
+❓ WHY DOES THIS MATTER?
+- 🖥️ **System Stability**: Prevents unresponsive programs from consuming system resources.
+- 🚀 **Performance Optimization**: Frees up CPU for critical tasks.
+- ⚙️ **Sysadmin Essentials**: Understanding process management is crucial for troubleshooting.
+
+══════════════════════════════════════════════
+📌 USE CASES:
+══════════════════════════════════════════════
+✔️ **Stopping runaway processes**: Prevents excessive CPU/memory usage.  
+✔️ **Improving system performance**: Keeps the system responsive.  
+✔️ **Handling zombie processes**: Removes abandoned child processes.  
+✔️ **Learning Linux process management**: Essential for sysadmins.  
+
+══════════════════════════════════════════════
+🛠️ PROJECT COMPLETION STEPS:
+══════════════════════════════════════════════
+
+🔹 1️⃣ START A MISBEHAVING PROCESS
+   ```bash
+   # Navigate to home directory
+   cd ~
+   
+   # Create a Python script
+   vi bad.py
+🔹 Inside vi, enter insert mode (press i) and type:
+
+i = 0
+while i == 0:
+    pass
+🔹 Save and exit vi:
+
+# Press ESC, then type:
+:wq
+🔹 Run the script in the background:
+
+python3 bad.py &
+✅ Now, the Python script is running an infinite loop in the background.
+
+🔹 2️⃣ IDENTIFY THE MISBEHAVING PROCESS
+
+# List all running processes that contain "python"
+ps -ef | grep python
+📌 Sample output:
+yourname+    342    254 99 23:34 pts/1    00:00:31 python3 bad.py
+yourname+    344    254  0 23:35 pts/1    00:00:00 grep --color=auto python
+
+✅ The process ID (PID) of bad.py is 342 (example).
+
+🔹 3️⃣ TERMINATE THE PROCESS
+
+# Kill process using SIGKILL (replace PROCESS_ID with actual PID)
+kill -9 342
+🔹 Alternatively, use:
+
+kill -s SIGKILL 342
+✅ This forcefully stops bad.py from consuming CPU resources.
+
+🔹 4️⃣ VERIFY PROCESS TERMINATION
+
+ps -ef | grep python
+✅ If bad.py is no longer in the list, it has been successfully terminated.
+
+══════════════ 🎯 COMPLETION & LEARNING OUTCOMES: ══════════════ 
+✅ Identified and monitored active processes
+✅ Used ps and grep to filter processes
+✅ Terminated a CPU-consuming process with kill -9
+✅ Gained experience in Linux process management
+
+🚀 Final Thoughts:
+This hands-on exercise improved my ability to manage system processes efficiently, an essential skill for system administration and troubleshooting.
+
+🎯 Mission Accomplished! ✅
