@@ -1,0 +1,240 @@
+🔷 Enhancing ARM Templates with Parameters and Outputs Work Sample
+🎯 Objective:
+
+This work sample demonstrates my ability to enhance Azure Resource Manager (ARM) templates by adding parameters and outputs. Parameters allow for dynamic input during deployment, while outputs provide valuable information about deployed resources. This makes ARM templates more flexible and reusable.
+❓ Why does this matter?
+
+Parameters and outputs are critical for creating modular and reusable ARM templates. Parameters enable customization during deployment, while outputs provide essential information for downstream processes. These features are essential for scalable and maintainable infrastructure as code (IaC) solutions.
+💡 Use cases:
+
+    Customizing resource configurations (e.g., storage account names, SKUs) during deployment.
+
+    Enforcing constraints on input values to prevent errors.
+
+    Capturing and utilizing resource details (e.g., endpoints) for post-deployment tasks.
+
+🛠️ Steps to completion:
+
+    Add a parameter for the storage account name: Define a parameter to dynamically set the storage account name during deployment.
+
+    Deploy the parameterized template: Use Azure PowerShell to deploy the template with the new parameter.
+
+    Add a parameter for storage SKU: Define a parameter with allowed values for the storage account SKU.
+
+    Deploy with valid and invalid SKUs: Test the template by deploying with both valid and invalid SKU values.
+
+    Add an output for storage endpoints: Capture the storage account's primary endpoints as an output.
+
+    Deploy and verify the output: Deploy the template and confirm the output in the Azure portal.
+
+🚀 Work Sample: Adding Parameters and Outputs to ARM Templates
+1. Adding a parameter for the storage account name
+
+I updated the azuredeploy.json file to include a storageName parameter. This parameter ensures the storage account name is provided during deployment and enforces length constraints:
+json
+Copy
+
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "storageName": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 24,
+      "metadata": {
+        "description": "The name of the Azure storage resource"
+      }
+    }
+  },
+  "functions": [],
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Storage/storageAccounts",
+      "apiVersion": "2023-05-01",
+      "name": "[parameters('storageName')]",
+      "tags": {
+        "displayName": "[parameters('storageName')]"
+      },
+      "location": "[resourceGroup().location]",
+      "kind": "StorageV2",
+      "sku": {
+        "name": "Standard_LRS"
+      }
+    }
+  ],
+  "outputs": {}
+}
+
+2. Deploying the parameterized template
+
+I deployed the template using Azure PowerShell, providing a unique storage account name:
+powershell
+Copy
+
+$templateFile = "azuredeploy.json"
+$today = Get-Date -Format "MM-dd-yyyy"
+$deploymentName = "addnameparameter-" + "$today"
+New-AzResourceGroupDeployment `
+  -Name $deploymentName `
+  -TemplateFile $templateFile `
+  -storageName "mystorageaccount12345"
+
+3. Adding a parameter for storage SKU
+
+I added a storageSKU parameter to restrict the allowed SKU values for the storage account:
+json
+Copy
+
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "storageName": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 24,
+      "metadata": {
+        "description": "The name of the Azure storage resource"
+      }
+    },
+    "storageSKU": {
+      "type": "string",
+      "defaultValue": "Standard_LRS",
+      "allowedValues": [
+        "Standard_LRS",
+        "Standard_GRS",
+        "Standard_RAGRS",
+        "Standard_ZRS",
+        "Premium_LRS",
+        "Premium_ZRS",
+        "Standard_GZRS",
+        "Standard_RAGZRS"
+      ]
+    }
+  },
+  "functions": [],
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Storage/storageAccounts",
+      "apiVersion": "2023-05-01",
+      "name": "[parameters('storageName')]",
+      "tags": {
+        "displayName": "[parameters('storageName')]"
+      },
+      "location": "[resourceGroup().location]",
+      "kind": "StorageV2",
+      "sku": {
+        "name": "[parameters('storageSKU')]"
+      }
+    }
+  ],
+  "outputs": {}
+}
+
+4. Deploying with valid and invalid SKUs
+
+I tested the template by deploying it with a valid SKU (Standard_GRS) and an invalid SKU (Basic). The deployment with the invalid SKU failed as expected.
+
+Valid SKU Deployment:
+powershell
+Copy
+
+$today = Get-Date -Format "MM-dd-yyyy"
+$deploymentName = "addSkuParameter-" + "$today"
+New-AzResourceGroupDeployment `
+  -Name $deploymentName `
+  -TemplateFile $templateFile `
+  -storageName "mystorageaccount12345" `
+  -storageSKU Standard_GRS
+
+Invalid SKU Deployment:
+powershell
+Copy
+
+$today = Get-Date -Format "MM-dd-yyyy"
+$deploymentName = "addSkuParameter-" + "$today"
+New-AzResourceGroupDeployment `
+  -Name $deploymentName `
+  -TemplateFile $templateFile `
+  -storageName "mystorageaccount12345" `
+  -storageSKU Basic
+
+5. Adding an output for storage endpoints
+
+I added an output to capture the storage account's primary endpoints:
+json
+Copy
+
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "storageName": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 24,
+      "metadata": {
+        "description": "The name of the Azure storage resource"
+      }
+    },
+    "storageSKU": {
+      "type": "string",
+      "defaultValue": "Standard_LRS",
+      "allowedValues": [
+        "Standard_LRS",
+        "Standard_GRS",
+        "Standard_RAGRS",
+        "Standard_ZRS",
+        "Premium_LRS",
+        "Premium_ZRS",
+        "Standard_GZRS",
+        "Standard_RAGZRS"
+      ]
+    }
+  },
+  "functions": [],
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Storage/storageAccounts",
+      "apiVersion": "2023-05-01",
+      "name": "[parameters('storageName')]",
+      "tags": {
+        "displayName": "[parameters('storageName')]"
+      },
+      "location": "[resourceGroup().location]",
+      "kind": "StorageV2",
+      "sku": {
+        "name": "[parameters('storageSKU')]"
+      }
+    }
+  ],
+  "outputs": {
+    "storageEndpoint": {
+      "type": "object",
+      "value": "[reference(parameters('storageName')).primaryEndpoints]"
+    }
+  }
+}
+
+6. Deploying and verifying the output
+
+I deployed the template and verified the output in the Azure portal:
+powershell
+Copy
+
+$today = Get-Date -Format "MM-dd-yyyy"
+$deploymentName = "addOutputs-" + "$today"
+New-AzResourceGroupDeployment `
+  -Name $deploymentName `
+  -TemplateFile $templateFile `
+  -storageName "mystorageaccount12345" `
+  -storageSKU Standard_LRS
+
+The output displayed the storage account's primary endpoints in JSON format.
+🎉 Conclusion
+
+This work sample highlights my ability to enhance ARM templates with parameters and outputs. By adding dynamic inputs and capturing resource details, I can create more flexible and reusable templates for Azure deployments. This skill is essential for building scalable and maintainable cloud infrastructure.
