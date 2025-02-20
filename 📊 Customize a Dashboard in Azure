@@ -1,0 +1,72 @@
+📊 Customize a Dashboard in Azure
+🎯 Objective:
+
+The goal was to create and customize a dashboard in Azure to display various tiles such as clocks, resource details, and charts. This work involved adding tiles, resizing them, cloning dashboards, and managing dashboard sharing and deletion processes. By doing this, I learned how to efficiently create customized views for monitoring and managing resources within Azure. 🔧
+🔍 Why Does This Matter?
+
+Dashboards are key to organizing and visualizing information in a cloud environment. Customizing dashboards allows users to quickly access relevant data and improve efficiency when managing multiple resources. This process is vital for Azure administrators and anyone managing cloud resources. 🌐
+📂 Use Cases:
+
+    Custom Dashboards: Tailoring dashboards for specific roles (e.g., admin, customer).
+    Monitoring: Using tiles for real-time information like time zones, resource statuses, and metrics.
+    Collaboration: Sharing dashboards across teams or removing unnecessary tiles to simplify views.
+
+✅ Steps to Completion:
+🛠️ Step 1: Create a New Dashboard
+
+    In the Azure portal, go to Show portal menu > Dashboard.
+    Click Create and select Custom.
+    Rename the dashboard to Customer Dashboard. 🎨
+
+⏰ Step 2: Add and Configure the Clock Tile
+
+    From the Tile Gallery, drag the Clock tile onto the workspace.
+    Right-click the tile and select Edit.
+    Change the Location to (UTC-08:00) Pacific Time (US & Canada).
+    Select 24-hour time format and click Done.
+    Repeat for a second clock with (UTC-05:00) Eastern Time (US & Canada).
+    Save your changes. 🕒
+
+📊 Step 3: Add and Resize Other Tiles
+
+    Drag the All resources tile into the top left corner of the dashboard.
+    Resize the tile to 6 x 4 by adjusting the bottom-right corner.
+    Add additional tiles like:
+        Resource Groups under All resources.
+        Metrics Chart to the right of the All resources tile.
+        Help + Support, Microsoft Entra quick tasks, and Marketplace tiles.
+    Click Save to keep the changes. 📈
+
+🔄 Step 4: Clone the Dashboard for Another Customer
+
+    Select Clone and rename the dashboard to Microsoft Entra Admin Dashboard.
+    Remove the Resource Groups tile.
+    Add the Users and Groups and User Sign-in Summary tiles.
+    Reposition and resize as needed, then Save the changes. 🔄
+
+🔒 Step 5: Share the Dashboard
+
+    In the Microsoft Entra Admin Dashboard, click Share.
+    Uncheck Publish to the 'dashboards' resource group if checked.
+    Select the appropriate resource group and click Publish.
+    Close the Sharing + Access Control pane. 🔐
+
+🗑️ Step 6: Delete the Dashboard
+
+    Select the Microsoft Entra Admin Dashboard from the dashboard list.
+    Click Delete, confirm in the message box, and select OK. ❌
+
+🔄 Step 7: Reset the Dashboard to Default State
+
+    Select Customer Dashboard, click Edit, and right-click to Reset to default state.
+    Confirm and select Save. Your dashboard will revert to its original layout. 🔄
+
+🚪 Step 8: Sign Out
+
+    Click on your name at the top-right, select Sign out, and close the browser. 🔒
+
+📚 Key Takeaways:
+
+    Customizing Dashboards: By learning how to add, resize, and clone tiles, I can now easily create dashboards tailored to various needs and stakeholders.
+    Sharing & Collaboration: Sharing and deleting dashboards are essential steps in managing data in collaborative environments.
+    Resetting Dashboards: I can now reset dashboards if any configuration changes need to be undone. 🔄
