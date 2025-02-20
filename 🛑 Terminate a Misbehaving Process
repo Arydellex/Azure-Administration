@@ -1,0 +1,75 @@
+🛑 Terminate a Misbehaving Process
+🎯 Objective:
+
+In this work sample, I focused on identifying and terminating a misbehaving Python process using basic Linux commands. The goal was to start an infinite loop in a Python program, track the running process, and successfully terminate it using the kill command. This exercise allowed me to understand how to manage processes and optimize system performance by removing unnecessary or harmful tasks. 🚀
+🔍 Why Does This Matter?
+
+As a system administrator or a developer working with Linux systems, being able to manage processes effectively is crucial. Sometimes applications become unresponsive or consume too many system resources (like CPU time). Knowing how to find and terminate these processes is key to keeping the system running smoothly. 🖥️
+📂 Use Cases:
+
+    Troubleshooting Misbehaving Applications: When a Python application is stuck in an infinite loop or consuming excessive resources.
+    System Resource Management: Freeing up CPU cycles by terminating resource-hogging processes.
+    Process Identification: Using ps and grep to locate running processes and terminate them.
+
+✅ Steps to Completion:
+🔄 Step 1: Create a Misbehaving Process
+
+    First, navigate to your home directory:
+
+cd ~
+
+Use vi to create a Python program:
+
+vi bad.py
+
+Press i to enter insert mode and type the following Python code:
+
+i = 0
+while i == 0:
+    pass
+
+Exit insert mode by pressing Esc and save the file by typing:
+
+:wq
+
+Run the Python script in the background:
+
+    python3 bad.py &
+
+    The script is now running in the background, consuming CPU resources.
+
+🕵️ Step 2: Identify the Running Process
+
+    Use the ps command to list all running processes, and grep to filter the output for the Python process:
+
+ps -ef | grep python
+
+The output will show something like this:
+
+    yourname+    342    254 99 23:34 pts/1    00:00:31 python3 bad.py
+    yourname+    344    254  0 23:35 pts/1    00:00:00 grep --color=auto python
+
+    Here, the process ID (PID) of the misbehaving Python script is 342, and it is consuming 99% of the CPU.
+
+⚔️ Step 3: Terminate the Process
+
+    Use the kill command with the SIGKILL signal to terminate the process:
+
+kill -9 342
+
+Alternatively, you can use the signal name:
+
+kill -s SIGKILL 342
+
+Verify that the process is no longer running by using ps again:
+
+    ps -ef | grep python
+
+    The bad.py process should no longer appear in the list.
+
+📚 Key Takeaways:
+
+    Process Management: Using commands like ps and kill is essential for managing processes that consume excessive system resources.
+    Process Identification: The ps -ef command is helpful for identifying running processes, and grep is a great tool to filter the output.
+    Signals: The kill command allows you to send different types of signals to processes. The SIGKILL signal (signal number 9) forcefully terminates a process.
+    System Optimization: Being able to kill misbehaving processes helps in maintaining system performance, especially in production environments.
