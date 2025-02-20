@@ -1,0 +1,107 @@
+🔷 Azure Resource Manager (ARM) Template Deployment Work Sample
+🎯 Objective:
+
+The goal of this work sample is to demonstrate my ability to create, customize, and deploy an Azure Resource Manager (ARM) template using Visual Studio Code and Azure PowerShell. This includes defining resources, deploying them to Azure, and verifying the deployment in the Azure portal.
+❓ Why does this matter?
+
+ARM templates are essential for infrastructure as code (IaC) in Azure. They allow for consistent, repeatable, and automated deployments of Azure resources. Mastering ARM templates is critical for cloud engineers and developers to efficiently manage and scale cloud infrastructure.
+💡 Use cases:
+
+    Automating the deployment of Azure resources (e.g., storage accounts, virtual machines, etc.).
+
+    Ensuring consistency across multiple environments (dev, test, prod).
+
+    Simplifying resource management and reducing manual errors.
+
+🛠️ Steps to completion:
+
+    Set up the environment: Install Visual Studio Code and the ARM Tools extension.
+
+    Create a blank ARM template: Use Visual Studio Code to generate a base ARM template.
+
+    Deploy the blank template: Use Azure PowerShell to deploy the template to Azure.
+
+    Add a resource: Customize the template to include an Azure storage account.
+
+    Deploy the updated template: Redeploy the template with the new resource.
+
+    Verify deployment: Check the Azure portal to confirm the successful deployment.
+
+🚀 Work Sample: Deploying an Azure Storage Account with ARM Templates
+1. Setting up the environment
+
+I started by installing Visual Studio Code and the Azure Resource Manager Tools extension. This extension provides helpful snippets and IntelliSense for ARM template development.
+2. Creating a blank ARM template
+
+I created a new file named azuredeploy.json and used the arm! snippet to generate a blank ARM template. Here’s the initial template:
+json
+Copy
+
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {},
+  "functions": [],
+  "variables": {},
+  "resources": [],
+  "outputs": {}
+}
+
+3. Deploying the blank template
+
+I signed into Azure using Azure PowerShell in Visual Studio Code and set the default subscription to the Concierge Subscription provided by the sandbox. Then, I deployed the blank template using the following commands:
+powershell
+Copy
+
+$templateFile = "azuredeploy.json"
+$today = Get-Date -Format "MM-dd-yyyy"
+$deploymentName = "blanktemplate-" + "$today"
+New-AzResourceGroupDeployment -Name $deploymentName -TemplateFile $templateFile
+
+4. Adding a storage account resource
+
+Next, I customized the template to include an Azure storage account. I used the arm-storage snippet to add the resource and updated the name, displayName, and sku values:
+json
+Copy
+
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {},
+  "functions": [],
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Storage/storageAccounts",
+      "apiVersion": "2023-05-01",
+      "name": "mystorageaccount12345",
+      "tags": {
+        "displayName": "mystorageaccount12345"
+      },
+      "location": "[resourceGroup().location]",
+      "kind": "StorageV2",
+      "sku": {
+        "name": "Standard_LRS"
+      }
+    }
+  ],
+  "outputs": {}
+}
+
+5. Deploying the updated template
+
+I redeployed the updated template with the storage account resource using the following commands:
+powershell
+Copy
+
+$templateFile = "azuredeploy.json"
+$today = Get-Date -Format "MM-dd-yyyy"
+$deploymentName = "addstorage-" + "$today"
+New-AzResourceGroupDeployment -Name $deploymentName -TemplateFile $templateFile
+
+6. Verifying the deployment
+
+After the deployment completed, I navigated to the Azure portal and checked the resource group. I confirmed that the storage account was successfully deployed under the addstorage deployment.
+🎉 Conclusion
+
+This work sample showcases my ability to create, customize, and deploy ARM templates to Azure. By following best practices and leveraging tools like Visual Studio Code and Azure PowerShell, I can efficiently manage cloud resources and automate deployments. This skill is crucial for modern cloud infrastructure management and DevOps workflows.
