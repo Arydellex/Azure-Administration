@@ -1,83 +1,79 @@
-# Azure Dashboard Management
+╔══════════════════════════════════════════╗
+║   🚀 Azure Dashboard Customization Lab   ║
+║         Portfolio Project Document       ║
+╚══════════════════════════════════════════╝
 
-## Objective
-To create, configure, customize, share, delete, and reset dashboards in the Azure portal, enhancing user experience and efficiency.
+🎯 OBJECTIVE:
+I successfully customized, cloned, and managed Azure dashboards to optimize cloud monitoring and organization.
 
-## Why does this matter?
-Dashboards in Azure provide a centralized view of resources, metrics, and essential information. Organizing dashboards efficiently improves productivity, monitoring, and accessibility for various roles within an organization.
+❓ WHY DOES THIS MATTER?
+- 📊 **Efficient Cloud Management**: Dashboards provide a central view of resources.
+- 🔍 **Quick Insights**: Helps in monitoring critical data without navigating multiple pages.
+- 👨‍💻 **Collaboration**: Enables shared visibility for teams to improve workflow.
 
-## Use Cases
-- Custom dashboards for different teams (e.g., Customer Support, Admins, Developers).
-- Quick access to essential resources and metrics.
-- Sharing dashboards for collaboration.
-- Resetting dashboards to maintain a standardized layout.
+══════════════════════════════════════════════
+📌 USE CASES:
+══════════════════════════════════════════════
+✔️ **Custom Dashboards**: Tailored views for specific monitoring needs.  
+✔️ **Multi-Time Zone Clocks**: Useful for global teams.  
+✔️ **Resource Organization**: Access and manage key assets easily.  
+✔️ **User Access Control**: Share dashboards securely.  
 
----
+══════════════════════════════════════════════
+🛠️ PROJECT COMPLETION STEPS:
+══════════════════════════════════════════════
 
-## Steps to Completion
+🔹 1️⃣ CREATE A CUSTOM DASHBOARD**
+   ```bash
+   # Open Azure Portal
+   Show portal menu > Dashboard > Create > Custom  
+   Rename: "Customer Dashboard"  
 
-### 1. **Create a New Dashboard**
-1. Open the **Azure portal**.
-2. Select **Show portal menu > Dashboard**.
-3. Click **Create** and select **Custom**.
-4. Rename "My Dashboard" to **Customer Dashboard**.
+🔹 2️⃣ ADD & CONFIGURE CLOCK TILE
 
-### 2. **Add and Configure a Clock Tile**
-1. Locate **Clock tile** in the **Tile Gallery** and drag it to the top-right workspace.
-2. Click **Preview**, right-click on the **Clock tile**, and select **Edit**.
-3. Change **Location** to **(UTC-08:00) Pacific Time (US & Canada)**.
-4. Set **Time format** to **24-hour**.
-5. Click **Done** > **Save**.
-6. Repeat the process for **(UTC-05:00) Eastern Time (US & Canada)**, placing it below the first clock.
+# Drag Clock tile onto workspace
+# Edit settings:
+Location: UTC-08:00 (Pacific) | Format: 24-Hour  
+Add a second clock with UTC-05:00 (Eastern)
 
-### 3. **Add and Resize Tiles**
-1. Click **Edit** mode.
-2. Add the **All resources** tile (place in the top left).
-3. Resize **All resources** tile to **6x4**.
-4. Add **Resource groups** tile (below All resources tile).
-5. Add **Metrics chart** tile (to the right of All resources tile).
-6. Add additional tiles:
-   - **Help + Support**
-   - **Microsoft Entra quick tasks**
-   - **Marketplace**
-7. Click **Save**.
+🔹 3️⃣ ADD & RESIZE RESOURCE TILES
 
-### 4. **Clone a Dashboard**
-1. Select **Clone**.
-2. Rename "Clone of Customer Dashboard" to **Microsoft Entra Admin Dashboard**.
-3. Remove the **Resource Groups** tile and **Save**.
-4. Add the following tiles:
-   - **Users and Groups**
-   - **User Sign-in Summary**
-5. Reposition tiles and **Save**.
+# Drag and arrange tiles
+- All resources (resize to 6x4)
+- Resource groups
+- Metrics chart
+- Help + support
+- Microsoft Entra quick tasks
+- Marketplace
 
-### 5. **Share a Dashboard** (Sandbox restriction applies)
-1. Select **Share**.
-2. Uncheck **Publish to the 'dashboards' resource group**.
-3. Choose **[sandbox resource group name]** from the dropdown.
-4. Click **Publish** > Close.
+🔹 4️⃣ CLONE A DASHBOARD
 
-### 6. **Delete a Dashboard**
-1. Select **Microsoft Entra Admin Dashboard**.
-2. Click **Delete**.
-3. Confirm deletion by checking the confirmation box > Click **OK**.
+# Clone "Customer Dashboard" > Rename "Microsoft Entra Admin Dashboard"
+# Remove 'Resource Groups' tile
+# Add 'Users and groups' & 'User sign-in summary' tiles
+# Save changes
 
-### 7. **Reset a Dashboard**
-1. Select **Customer Dashboard**.
-2. Click **Edit**.
-3. Right-click in the workspace > **Reset to default state**.
-4. Confirm reset > Click **Yes** > **Save**.
-5. Sign out and close the browser.
+🔹 5️⃣ SHARE DASHBOARD (SIMULATION)
 
----
+# Share > Select a resource group > Publish
 
-## Summary
-You have successfully:
-- Created & customized dashboards
-- Added & resized tiles
-- Cloned, shared, and deleted dashboards
-- Reset dashboards to their default state
+🔹 6️⃣ DELETE A DASHBOARD
 
-This project enhances visibility and efficiency in Azure environments, making dashboard management seamless and effective!
+# Select "Microsoft Entra Admin Dashboard"
+# Delete > Confirm deletion
 
----
+🔹 7️⃣ RESET DASHBOARD TO DEFAULT
+
+# Select "Customer Dashboard"
+# Edit > Reset to default > Save
+
+════════════════════════ 🎯 COMPLETION & LEARNING OUTCOMES: ════════════════════════ 
+✅ Created and customized Azure dashboards
+✅ Configured monitoring widgets and time zones
+✅ Managed dashboard sharing and access control
+✅ Deleted and reset dashboards for better organization
+
+🚀 Final Thoughts:
+Through this sample, I learned how to build efficient Azure dashboards that improve cloud management and streamline operations for different roles within an organization.
+
+🎯 Mission Accomplished! ✅
