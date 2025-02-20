@@ -1,0 +1,125 @@
+🖥️ Linux Bash & Azure Cloud Shell
+🎯 Objective:
+
+The purpose of this work sample was to familiarize myself with Bash commands and how they can be used within Azure Cloud Shell. I learned to explore directories, list files, autocomplete commands, recall previous commands, and access command manuals. By completing these steps, I gained hands-on experience with basic file navigation and command execution in a Linux environment. 🖱️
+🔍 Why Does This Matter?
+
+Bash is a fundamental skill for anyone working with Linux-based systems, especially in cloud environments like Azure. It allows you to efficiently manage resources, automate tasks, and troubleshoot issues. Gaining proficiency in Bash is critical for cloud administrators and developers working with the Azure platform. 🌐
+📂 Use Cases:
+
+    Directory Navigation: Moving between directories and listing files.
+    Command Autocompletion: Saving time and avoiding errors while typing.
+    Command History: Recalling and editing previous commands.
+    Accessing Manuals: Getting detailed information on command syntax and options.
+
+✅ Steps to Completion:
+🌐 Step 1: Familiarize with Cloud Shell
+
+    Open Azure Cloud Shell and use the ls command to list files:
+
+ls
+
+Output:
+
+yourname@Azure:~$ ls
+clouddrive
+
+Use pwd to print the working directory:
+
+pwd
+
+Output:
+
+yourname@Azure:~$ pwd
+/home/yourname
+
+Check hidden files with ls -a:
+
+ls -a
+
+Output:
+
+    yourname@Azure:~$ ls -a
+    .  ..  .azure  .bash_history  .bash_logout  .bashrc  clouddrive  .profile  .tmux.conf  .viminfo
+
+🔄 Step 2: Recall Previous Commands
+
+    Try using a command with a typo:
+
+ls -a .azure/commands/203?*.log
+
+Output:
+
+ls: cannot access '.azure/commands/203?*.log': No such file or directory
+
+Recall the last command using the Up arrow key, correct the typo, and hit Enter.
+
+Once corrected, the output should list the files:
+
+    .azure/commands/2020-01-29.21-56-35.login.103.log
+    .azure/commands/2020-01-29.21-56-38.account_set.112.log
+
+✨ Step 3: Use Autocompletion
+
+    Use Tab to autocomplete the file path while using the cat command:
+
+cat .a
+
+After pressing Tab, the path autocompletes:
+
+cat .azure/
+
+Continue typing to autocomplete and press Enter to display the log file content:
+
+    CMD-LOG-LINE-BEGIN 103 | 2020-01-29 21:56:35,426 | INFO | az_command_data_logger | command args: login --identity
+
+📚 Step 4: Access Manual Pages with man
+
+    To learn more about the cat command, use the man command:
+
+man cat
+
+This brings up the manual page, where you can scroll through information about cat:
+
+    CAT(1)                                       User Commands                                       CAT(1)
+    NAME
+        cat - concatenate files and print on the standard output
+    SYNOPSIS
+        cat [OPTION]... [FILE]...
+    DESCRIPTION
+        Concatenate FILE(s) to standard output.
+
+    Press q to exit the manual.
+
+🧭 Step 5: Change Directories
+
+    To move to your home directory, use the cd command:
+
+cd ~
+
+Verify with pwd:
+
+pwd
+
+Output:
+
+/home/yourname
+
+Use Tab to autocomplete the directory path:
+
+cd .azure/commands/
+
+Move up one level using cd ..:
+
+cd ..
+
+The new output:
+
+    yourname@Azure:~/.azure$
+
+📚 Key Takeaways:
+
+    Bash Navigation: I became comfortable using basic Bash commands to navigate and manipulate files and directories.
+    Autocompletion: Autocompletion and command history make working in Bash faster and more efficient.
+    Manual Pages: The man command is a powerful tool for learning more about the commands I use in the shell.
+    Directory Management: Understanding how to change directories and work with relative paths has improved my ability to manage files and scripts in Azure Cloud Shell.
