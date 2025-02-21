@@ -1,0 +1,52 @@
+🔷 Create Basic Azure Monitor Log Queries to Extract Information from Log Data
+
+📌 Objective:
+To perform Azure Monitor log queries using Kusto Query Language (KQL) to gather system status, security events, and application data for further analysis.
+
+📌 Why does this matter?
+Extracting information from log data helps diagnose and resolve system issues effectively, ensuring the reliability and security of applications running on Azure.
+
+📌 Use cases:
+- Organizations monitoring system behavior and security
+- IT departments diagnosing and resolving issues
+- Proactively identifying and addressing performance and security concerns
+
+📌 Steps to completion:
+1. **Create Basic Azure Monitor Log Queries:**
+   - Opened the Logs demo environment and entered a basic query to retrieve the 10 most recent security events:
+   ```kusto
+   SecurityEvent
+       | take 10
+
+Sorted data by time:
+SecurityEvent
+    | top 10 by TimeGenerated
+
+Added a filter clause and time range:
+SecurityEvent
+    | where TimeGenerated < ago(30m)
+    | where toint(Level) >= 10
+
+Queried the AppEvents table for the "Clicked Schedule Button" event in the last 24 hours:
+
+AppEvents 
+    | where TimeGenerated > ago(24h)
+    | where Name == "Clicked Schedule Button"
+Displayed the number of different computers generating heartbeat events each week for the last three weeks as a bar chart:
+
+Heartbeat
+    | where TimeGenerated >= startofweek(ago(21d))
+    | summarize dcount(Computer) by endofweek(TimeGenerated) | render barchart kind=default
+
+    Use Predefined Azure Log Queries:
+
+        Set a custom time range in the command bar.
+
+        Selected predefined queries from the left toolbar:
+
+            IT & Management Tools: Ran the "Distinct missing updates cross computers" query to return a list of missing Windows updates.
+
+            Azure Monitor: Ran the "Computers availability today" query to create a time series chart.
+
+            Function App: Ran the "Show application logs from Function Apps" query to return a list of application logs sorted by time.
+Basic and predefined Azure Monitor log queries were successfully created to extract valuable information from log data.
