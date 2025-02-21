@@ -1,0 +1,52 @@
+🔷 Create a Virtual Machine using Azure Portal
+
+📌 Objective:
+To create a virtual machine (VM) running a web server on Ubuntu using the Azure portal.
+
+📌 Why does this matter?
+Creating VMs in the cloud allows for scalable, flexible, and cost-effective computing resources, essential for modern IT infrastructure.
+
+📌 Use cases:
+- Organizations migrating on-premises infrastructure to the cloud
+- Development and testing environments for software applications
+- On-demand computing resources for various business needs
+
+📌 Steps to completion:
+1. **Set Up Sandbox Environment:**
+   - Activated the sandbox for free resources.
+   
+2. **Sign In and Create VM:**
+   - Signed in to the Azure portal.
+   - Selected **Create a resource** and chose **Virtual machine**.
+
+3. **Configure the VM:**
+   - Entered the basic parameters for the VM:
+     - **Subscription:** Concierge Subscription
+     - **Resource group:** [sandbox resource group name]
+     - **Virtual machine name:** test-ubuntu-cus-vm
+     - **Region:** Chose a geographical location close to me
+     - **Availability options:** No infrastructure redundancy required
+     - **Security type:** Standard
+     - **Image:** Ubuntu Server 24.04 LTS - Gen2
+     - **VM architecture:** x64
+     - **Run with Azure Spot discount:** Unchecked
+     - **Size:** Standard D2s V3
+     - **Authentication type:** SSH public key
+     - **Username:** Entered a username
+     - **SSH public key source:** Generated a new key pair
+     - **Key pair name:** test-ubuntu-cus-vm_key
+     - **Public inbound ports:** Allowed selected ports (SSH 22)
+
+4. **Review and Create VM:**
+   - Reviewed and validated the configuration settings.
+   - Created the VM and downloaded the private key.
+
+5. **Monitor Deployment:**
+   - Monitored the deployment through the Notifications pane.
+   - Received a notification confirming the successful deployment.
+
+6. **Access the VM:**
+   - Navigated to the VM's Overview page to view configuration options.
+   - Noted the Public IP address for SSH access.
+
+Congratulations! The VM running Linux was successfully deployed using the Azure portal.
