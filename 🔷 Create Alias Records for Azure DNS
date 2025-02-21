@@ -1,0 +1,35 @@
+🔷 Create Alias Records for Azure DNS
+
+📌 Objective:
+To set up a virtual network with two VMs and a load balancer, and configure an Azure alias record to dynamically direct traffic to the load balancer.
+
+📌 Why does this matter?
+Using Azure alias records ensures efficient load balancing and dynamic IP address resolution, enhancing the scalability and reliability of web services.
+
+📌 Use cases:
+- Organizations managing high-traffic websites
+- IT departments implementing load balancing for web servers
+- Ensuring dynamic and reliable DNS resolution
+
+📌 Steps to completion:
+1. **Set Up Test Environment:**
+   - Ran the setup script in Azure Cloud Shell:
+     - Cloned the repository from GitHub.
+     - Executed the setup script to create a virtual network, load balancer, and two VMs.
+   - Noted the public IP address for the load balancer.
+
+2. **Create an Alias Record:**
+   - Navigated to the resource group in the Azure portal.
+   - Selected the DNS zone **wideworldimportsXXXX.com** (replacing "XXXX" with unique characters).
+   - Added a new record set with the following values:
+     - **Name:** Left blank (indicating the DNS zone apex)
+     - **Type:** A
+     - **Alias record set:** Yes
+     - **Alias type:** Azure resource
+     - **Azure resource:** Selected **myPublicIP**
+
+3. **Verify DNS Configuration:**
+   - Copied the public IP address from **myPublicIP**.
+   - Pasted the IP address in a web browser to verify that the load balancer correctly directed traffic to one of the VMs.
+
+The alias record was successfully created, and DNS resolution is working as expected.
