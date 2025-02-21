@@ -1,0 +1,94 @@
+🔷 Back up an Azure Virtual Machine
+
+📌 Objective:
+To demonstrate the use of Azure Backup for both Windows and Linux virtual machines (VMs) by setting up and starting backups using the Azure CLI and Azure portal.
+
+📌 Why does this matter?
+Azure Backup provides a reliable and efficient way to protect VMs, ensuring data availability and disaster recovery for critical workloads.
+
+📌 Use cases:
+- Organizations running mixed Windows and Linux environments
+- IT departments implementing backup and recovery strategies
+- Ensuring business continuity and data protection
+
+📌 Steps to completion:
+1. **Set Up the Environment:**
+   - Created a resource group for the exercise:
+   ```bash
+   RGROUP=$(az group create --name vmbackups --location westus2 --output tsv --query name)
+
+Created a virtual network and subnet:
+az network vnet create \
+    --resource-group $RGROUP \
+    --name NorthwindInternal \
+    --address-prefixes 10.0.0.0/16 \
+    --subnet-name NorthwindInternal1 \
+    --subnet-prefixes 10.0.0.0/24
+
+Create Windows and Linux Virtual Machines:
+
+    Created the NW-APP01 (Windows) VM:
+az vm create \
+    --resource-group $RGROUP \
+    --name NW-APP01 \
+    --size Standard_DS1_v2 \
+    --public-ip-sku Standard \
+    --vnet-name NorthwindInternal \
+    --subnet NorthwindInternal1 \
+    --image Win2016Datacenter \
+    --admin-username admin123 \
+    --no-wait \
+    --admin-password <password>
+
+Created the NW-RHEL01 (Linux) VM:
+az vm create \
+    --resource-group $RGROUP \
+    --name NW-RHEL01 \
+    --size Standard_DS1_v2 \
+    --image RedHat:RHEL:8-gen2:latest \
+    --authentication-type ssh \
+    --generate-ssh-keys \
+    --vnet-name NorthwindInternal \
+    --subnet NorthwindInternal1
+
+Enable Backup for a Virtual Machine via Azure Portal:
+
+    Selected the NW-RHEL01 VM and navigated to Backup under the Capabilities tab.
+
+    Enabled backup with the default settings and performed the first backup.
+
+Enable Backup via Azure CLI:
+
+    Created the backup vault:
+az backup vault create \
+    --resource-group vmbackups \
+    --location westus2 \
+    --name azure-backup
+
+Enabled backup for the NW-APP01 VM:
+az backup protection enable-for-vm \
+    --resource-group vmbackups \
+    --vault-name azure-backup \
+    --vm NW-APP01 \
+    --policy-name EnhancedPolicy
+
+Monitored the backup setup progress:
+az backup job list \
+    --resource-group vmbackups \
+    --vault-name azure-backup \
+    --output table
+
+Performed an initial backup:
+az backup protection backup-now \
+    --resource-group vmbackups \
+    --vault-name azure-backup \
+    --container-name NW-APP01 \
+    --item-name NW-APP01 \
+    --retain-until 18-10-2030 \
+    --backup-management-type AzureIaasVM
+
+Monitor Backups in the Portal:
+
+    Viewed the status of backups for individual VMs and in the Recovery Services vault.
+
+The VMs were successfully backed up using Azure Backup.
