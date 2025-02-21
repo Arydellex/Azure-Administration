@@ -1,0 +1,32 @@
+🔷 Restore Azure Virtual Machine Data
+
+📌 Objective:
+To restore a virtual machine (VM) from a backup and attach its disk to the problematic live server.
+
+📌 Why does this matter?
+Restoring VM data ensures business continuity by recovering from failures and data corruption, maintaining the reliability of critical workloads.
+
+📌 Use cases:
+- Organizations needing disaster recovery solutions
+- IT departments ensuring data availability
+- Restoring VMs to a previous state after issues
+
+📌 Steps to completion:
+1. **Create a Storage Account for Staging:**
+   - Created a storage account in the **vmbackups** resource group.
+   - Named the storage account **restorestagingYYYYMMDD** with the region set to **(US) West US 2**.
+
+2. **Stop the Virtual Machine:**
+   - Stopped the NW-APP01 virtual machine in the Azure portal to prevent restore errors.
+
+3. **Restore the Virtual Machine:**
+   - Accessed the Backup section under Operations for the NW-APP01 VM.
+   - Selected the **Restore VM** option and chose the appropriate restore point.
+   - Configured the restore point with **Replace existing** and selected the previously created storage account as the staging location.
+   - Initiated the restore process.
+
+4. **Track the Restore:**
+   - Monitored the restore progress in the **Backup Jobs** pane.
+   - Viewed details of the restore job, including job status and sub-tasks.
+
+The virtual machine was successfully restored from the backup, ensuring data recovery and system reliability.
