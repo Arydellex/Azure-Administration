@@ -1,0 +1,61 @@
+🔷 Granting and Removing Access Using Azure RBAC Work Sample
+🎯 Objective:
+
+This work sample demonstrates my ability to grant and remove access using Azure Role-Based Access Control (RBAC). I assigned the Virtual Machine Contributor role to a user at the resource group scope and later removed the assignment. This exercise highlights my understanding of least privilege principles and access management in Azure.
+❓ Why does this matter?
+
+Granting the least privileges necessary ensures that users have access only to the resources they need, reducing the risk of accidental or malicious actions. Proper access management is critical for maintaining security and compliance in Azure.
+💡 Use cases:
+
+    Assigning roles to users for specific tasks (e.g., managing virtual machines).
+
+    Removing role assignments when access is no longer required.
+
+    Ensuring compliance with least privilege principles.
+
+🛠️ Steps to completion:
+
+    Granted access: Assigned the Virtual Machine Contributor role to a user for a resource group.
+
+    Removed access: Removed the role assignment when it was no longer needed.
+
+🚀 Work Sample: Managing Access with Azure RBAC
+1. Granting access
+
+I granted a user named Alain the Virtual Machine Contributor role for a resource group using the following steps:
+
+    Signed into the Azure portal as an administrator with role assignment permissions.
+
+    Searched for and selected Resource groups.
+
+    Selected the example-group resource group.
+
+    Navigated to Access control (IAM) in the left menu.
+
+    Clicked Add > Add role assignment.
+
+    On the Role tab, searched for and selected Virtual Machine Contributor.
+
+    Clicked Next.
+
+    On the Members tab, selected Select members.
+
+    Searched for and selected Alain.
+
+    Clicked Select to add Alain to the Members list.
+
+    Clicked Next and then Review + assign to complete the role assignment.
+
+2. Removing access
+
+I removed the Virtual Machine Contributor role assignment for Alain:
+
+    In the Role assignments tab, searched for and selected Alain's assignment.
+
+    Clicked Delete.
+
+    Confirmed the removal by clicking Yes in the Remove role assignments message.
+
+🎉 Conclusion
+
+This work sample showcases my ability to manage access in Azure using RBAC. By granting and removing role assignments, I ensured that users have the appropriate level of access while adhering to least privilege principles. These skills are essential for maintaining security and compliance in Azure environments.
