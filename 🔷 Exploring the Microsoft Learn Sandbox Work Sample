@@ -1,0 +1,97 @@
+🔷 Exploring the Microsoft Learn Sandbox Work Sample
+🎯 Objective:
+
+This work sample demonstrates my ability to navigate and utilize the Microsoft Learn sandbox environment. I explored different methods of interacting with Azure resources, including PowerShell, BASH, Azure CLI interactive mode, and the Azure portal. This hands-on experience highlights my familiarity with Azure tools and command-line interfaces.
+❓ Why does this matter?
+
+The Microsoft Learn sandbox provides a risk-free environment to practice Azure skills without incurring costs. Mastering these tools is essential for efficiently managing Azure resources, automating tasks, and troubleshooting issues in real-world scenarios.
+💡 Use cases:
+
+    Practicing Azure commands in a safe, isolated environment.
+
+    Learning to switch between PowerShell and BASH for Azure management.
+
+    Exploring the Azure portal to understand resource management through a graphical interface.
+
+🛠️ Steps to completion:
+
+    Activated the Learn sandbox: Set up the sandbox environment for hands-on practice.
+
+    Used PowerShell CLI: Executed basic PowerShell commands and Azure-specific commands.
+
+    Switched to BASH CLI: Ran BASH commands and Azure CLI commands.
+
+    Explored Azure CLI interactive mode: Utilized autocompletion and command descriptions in interactive mode.
+
+    Accessed the Azure portal: Navigated the Azure portal to explore services and resource groups.
+
+🚀 Work Sample: Exploring the Learn Sandbox
+1. Activating the Learn sandbox
+
+I activated the Microsoft Learn sandbox by clicking the Activate sandbox button. After granting the necessary permissions, the sandbox environment was ready for use.
+2. Using the PowerShell CLI
+
+I executed the following commands in PowerShell mode:
+
+    Get-date: Retrieved the current date and time.
+    powershell
+    Copy
+
+    Get-date
+
+    az version: Checked the version of the Azure CLI.
+    powershell
+    Copy
+
+    az version
+
+3. Switching to BASH CLI
+
+I switched to BASH mode and ran the following commands:
+
+    date: Retrieved the current date and time.
+    bash
+    Copy
+
+    date
+
+    az upgrade: Attempted to upgrade the Azure CLI.
+    bash
+    Copy
+
+    az upgrade
+
+4. Exploring Azure CLI interactive mode
+
+I entered interactive mode and tested its features:
+
+    az interactive: Started interactive mode.
+    bash
+    Copy
+
+    az interactive
+
+    version: Checked the Azure CLI version without using the az prefix.
+    bash
+    Copy
+
+    version
+
+    upgrade: Attempted to upgrade the Azure CLI.
+    bash
+    Copy
+
+    upgrade
+
+    exit: Exited interactive mode.
+    bash
+    Copy
+
+    exit
+
+5. Accessing the Azure portal
+
+I signed into the Azure portal using the provided link to explore the web interface. I reviewed available services, resource groups, and other Azure features.
+🎉 Conclusion
+
+This work sample highlights my ability to navigate and utilize the Microsoft Learn sandbox environment effectively. By practicing with PowerShell, BASH, Azure CLI interactive mode, and the Azure portal, I gained hands-on experience with essential Azure tools. These skills are critical for managing Azure resources and automating tasks in real-world scenarios.
