@@ -1,0 +1,56 @@
+🔷 Updating User License Assignments in Microsoft Entra ID Work Sample
+🎯 Objective:
+
+This work sample demonstrates my ability to create a new user in Microsoft Entra ID and update their license assignments. It highlights my skills in managing user accounts and ensuring they have the appropriate licenses for accessing Microsoft 365 services.
+❓ Why does this matter?
+
+Properly managing user licenses ensures that individuals have access to the tools and services they need to perform their roles effectively. It also helps organizations optimize license usage and maintain compliance with licensing agreements.
+💡 Use cases:
+
+    Onboarding new employees by creating user accounts and assigning licenses.
+
+    Updating license assignments for existing users (e.g., adding or removing licenses).
+
+    Ensuring users have access to the correct services based on their roles.
+
+🛠️ Steps to completion:
+
+    Create a new user: Added a user named Dominique Koch to Microsoft Entra ID.
+
+    Update license assignments: Assigned appropriate licenses to Dominique Koch.
+
+🚀 Work Sample: Managing User Licenses
+1. Creating a new user
+
+I created a new user in Microsoft Entra ID with the following details:
+
+    User name: DominiqueK
+
+    Name: Dominique Koch
+
+    First name: Dominique
+
+    Last name: Koch
+
+    Password: A unique, secure password
+
+    Usage location: Selected a preferred location (e.g., United States)
+
+After creation, I verified that the user Dominique Koch appeared in the All users list.
+2. Updating license assignments
+
+I assigned licenses to Dominique Koch using the following steps:
+
+    Navigated to Microsoft Entra admin center > Identity > Users.
+
+    Selected Dominique Koch from the All users list.
+
+    Clicked Licenses in the left navigation.
+
+    Selected the appropriate licenses (e.g., Office 365 Enterprise E3) from the list.
+
+    Clicked Save to apply the changes.
+
+🎉 Conclusion
+
+This work sample showcases my ability to create new users and manage their license assignments in Microsoft Entra ID. By ensuring users have the correct licenses, I can help organizations maintain productivity and compliance.
