@@ -1,0 +1,30 @@
+🔷 Customize Directory Branding for Microsoft Entra
+
+📌 Objective:
+To display the retail organization's branding on the Azure sign-in page, ensuring users are aware they’re passing credentials to a legitimate system.
+
+📌 Why does this matter?
+Custom branding reassures users of the legitimacy of the system they are accessing, enhancing trust and organizational identity.
+
+📌 Use cases:
+- Retail organizations ensuring secure and branded sign-in experiences
+- IT departments implementing company-wide branding policies
+- Users recognizing official login portals
+
+📌 Steps to completion:
+1. **Prepare Image Files:**
+   - Background image: PNG or JPG, 1920 x 1080 pixels, < 300 KB
+   - Logo image: PNG or JPG, 32 x 32 pixels, < 5 KB
+
+2. **Customize Branding:**
+   - Signed in to the Azure portal.
+   - Navigated to Microsoft Entra ID and switched to the correct directory.
+   - Selected **Company branding** under Manage.
+   - Customized the branding by uploading the favicon and background images, and set the page background color.
+   - Reviewed and created the custom branding.
+
+3. **Test the Branding:**
+   - Opened a new browser window and navigated to [login.microsoft.com](https://login.microsoft.com).
+   - Selected the account for **Bala Sandhu** to view the custom branding.
+   - Tested the "Forgot my password" functionality to ensure the branding was displayed correctly.
+
