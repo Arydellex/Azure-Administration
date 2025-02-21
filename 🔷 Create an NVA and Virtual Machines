@@ -1,0 +1,60 @@
+🔷 Create an NVA and Virtual Machines
+
+📌 Objective:
+To deploy a network virtual appliance (NVA) and virtual machines (VMs) to secure and monitor traffic within Azure infrastructure.
+
+📌 Why does this matter?
+Using NVAs helps enhance network security by monitoring and controlling traffic between front-end public servers and internal private servers.
+
+📌 Use cases:
+- Organizations implementing advanced security strategies
+- IT departments managing secure communication between network segments
+- Ensuring monitored and controlled traffic flow across subnets
+
+📌 Steps to completion:
+1. **Deploy the Network Virtual Appliance (NVA):**
+   - Ran the following command in Cloud Shell to deploy the appliance:
+   ```bash
+   az vm create \
+       --resource-group "[sandbox resource group name]" \
+       --name nva \
+       --vnet-name vnet \
+       --subnet dmzsubnet \
+       --image Ubuntu2204 \
+       --admin-username azureuser \
+       --admin-password <password>
+
+Enable IP Forwarding for the Azure Network Interface:
+
+    Retrieved the NVA network interface's ID:
+NICID=$(az vm nic list \
+    --resource-group "[sandbox resource group name]" \
+    --vm-name nva \
+    --query "[].{id:id}" --output tsv)
+echo $NICID
+
+Retrieved the NVA network interface's name:
+NICNAME=$(az vm nic show \
+    --resource-group "[sandbox resource group name]" \
+    --vm-name nva \
+    --nic $NICID \
+    --query "{name:name}" --output tsv)
+echo $NICNAME
+
+Enabled IP forwarding for the network interface:
+az network nic update --name $NICNAME \
+    --resource-group "[sandbox resource group name]" \
+    --ip-forwarding true
+
+Enable IP Forwarding in the Appliance:
+
+    Saved the NVA virtual machine's public IP address:
+NVAIP="$(az vm list-ip-addresses \
+    --resource-group "[sandbox resource group name]" \
+    --name nva \
+    --query "[].virtualMachine.network.publicIpAddresses[*].ipAddress" \
+    --output tsv)"
+echo $NVAIP
+
+Enabled IP forwarding within the NVA:
+ssh -t -o StrictHostKeyChecking=no azureuser@$NVAIP 'sudo sysctl -w net.ipv4.ip_forward=1; exit;'
