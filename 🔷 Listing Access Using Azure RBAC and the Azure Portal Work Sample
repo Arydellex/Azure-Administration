@@ -1,0 +1,63 @@
+🔷 Listing Access Using Azure RBAC and the Azure Portal Work Sample
+🎯 Objective:
+
+This work sample demonstrates my ability to use Azure Role-Based Access Control (RBAC) to list role assignments for myself and a resource group. It highlights my understanding of how to navigate the Azure portal to review permissions and roles, ensuring proper access management in Azure.
+❓ Why does this matter?
+
+Proper access management is critical for maintaining security and compliance in Azure. By understanding how to list and review role assignments, I can ensure that users and resources have the appropriate level of access, minimizing the risk of unauthorized actions.
+💡 Use cases:
+
+    Reviewing my own role assignments to understand my permissions in Azure.
+
+    Auditing role assignments for a resource group to ensure proper access control.
+
+    Identifying inherited roles and their scope within the Azure hierarchy.
+
+🛠️ Steps to completion:
+
+    Listed my role assignments: Reviewed the roles assigned to me in the Azure portal.
+
+    Listed role assignments for a resource group: Checked the roles assigned to a specific resource group.
+
+    Explored built-in roles: Reviewed the list of built-in roles and their details.
+
+🚀 Work Sample: Managing Access with Azure RBAC
+1. Listing my role assignments
+
+I reviewed my own role assignments using the following steps:
+
+    Signed into the Azure portal.
+
+    Clicked the ellipsis (...) on the Profile menu and selected My permissions.
+
+    Reviewed the list of roles assigned to me, along with their scope (e.g., subscription, resource group).
+
+2. Listing role assignments for a resource group
+
+I checked the role assignments for a resource group named example-group:
+
+    Searched for and selected Resource groups in the Azure portal.
+
+    Selected the example-group resource group from the list.
+
+    Navigated to Access control (IAM) in the left menu.
+
+    Selected the Role assignments tab to view the list of users, groups, and their assigned roles.
+
+        Noted which roles were scoped to This resource and which were Inherited from a parent scope.
+
+3. Exploring built-in roles
+
+I explored the list of built-in roles in Azure:
+
+    In the Access control (IAM) pane, selected the Roles tab.
+
+    Reviewed the list of built-in roles (e.g., Owner, Contributor, Reader).
+
+    Selected a role (e.g., Contributor) and clicked View to see its details.
+
+    Checked the Assignments tab to see the number of users and groups assigned to the role.
+
+🎉 Conclusion
+
+This work sample highlights my ability to use Azure RBAC to list and review role assignments. By understanding how to navigate the Azure portal and interpret role assignments, I can effectively manage access to Azure resources and ensure compliance with security policies.
