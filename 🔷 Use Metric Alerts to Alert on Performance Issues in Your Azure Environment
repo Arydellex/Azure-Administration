@@ -1,0 +1,76 @@
+🔷 Use Metric Alerts to Alert on Performance Issues in Your Azure Environment
+
+📌 Objective:
+To set up metric alerts in Azure that monitor and alert on high CPU usage for virtual machines (VMs).
+
+📌 Why does this matter?
+Metric alerts help proactively monitor and address performance issues, ensuring the stability and reliability of applications running on Azure.
+
+📌 Use cases:
+- Organizations monitoring application performance
+- IT departments ensuring system health
+- Proactively identifying and resolving performance bottlenecks
+
+📌 Steps to completion:
+1. **Create the VM:**
+   - Created a configuration script (`cloud-init.txt`) to stress the CPU:
+   ```bash
+   cat <<EOF > cloud-init.txt
+   #cloud-config
+   package_upgrade: true
+   packages:
+   - stress
+   runcmd:
+   - sudo stress --cpu 1
+   EOF
+
+Set up an Ubuntu Linux VM using the configuration script:
+az vm create \
+    --resource-group "[sandbox resource group name]" \
+    --name vm1 \
+    --location eastUS \
+    --image Ubuntu2204 \
+    --custom-data cloud-init.txt \
+    --generate-ssh-keys
+
+Create the Metric Alert Using the Azure Portal:
+
+    Signed in to the Azure portal and selected Monitor.
+
+    Created a new alert rule for the vm1 VM with the following settings:
+
+        Signal name: Percentage CPU
+
+        Threshold: Greater than 90%
+
+        Severity: 2 - Warning
+
+        Alert rule name: Cpu90PercentAlert
+
+Create the Metric Alert Through the CLI:
+
+    Obtained the resource ID of the vm1 VM:
+VMID=$(az vm show \
+    --resource-group "[sandbox resource group name]" \
+    --name vm1 \
+    --query id \
+    --output tsv)
+
+Created a new metric alert for CPU usage greater than 80%:
+az monitor metrics alert create \
+    -n "Cpu80PercentAlert" \
+    --resource-group "[sandbox resource group name]" \
+    --scopes $VMID \
+    --condition "max percentage CPU > 80" \
+    --description "Virtual machine is running at or greater than 80% CPU utilization" \
+    --evaluation-frequency 1m \
+    --window-size 1m \
+    --severity 3
+
+    View Your Metric Alerts in Azure Monitor:
+
+        Returned to the Azure portal and selected Monitor > Alerts.
+
+        Monitored the alerts and viewed details of the triggered alerts.
+
+Metric alerts were successfully set up to monitor and alert on high CPU usage for the virtual machine.
