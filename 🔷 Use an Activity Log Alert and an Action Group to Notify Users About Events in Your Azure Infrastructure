@@ -1,0 +1,50 @@
+🔷 Use an Activity Log Alert and an Action Group to Notify Users About Events in Your Azure Infrastructure
+
+📌 Objective:
+To set up an activity log alert and an action group to notify users when a virtual machine (VM) is deleted.
+
+📌 Why does this matter?
+Activity log alerts help proactively monitor significant events, ensuring that users are promptly notified of critical changes in their Azure infrastructure.
+
+📌 Use cases:
+- Organizations monitoring infrastructure changes
+- IT departments ensuring timely responses to critical events
+- Proactively identifying and addressing potential issues
+
+📌 Steps to completion:
+1. **Create the Azure Activity Log Monitor:**
+   - Signed in to the Azure portal and navigated to **Monitor** > **Alerts**.
+   - Created an alert rule for **All Virtual machines** in the resource group to detect when a VM is deleted.
+   - Selected **Delete Virtual Machine (Virtual Machines)** as the signal and kept alert logic settings at their default.
+
+2. **Add an Email Alert Action:**
+   - Selected **Use action groups** and created a new action group:
+     - **Action group name:** Alert the operations team
+     - **Display name:** AlertOps
+   - Added an email notification with the following settings:
+     - **Notification type:** Email
+     - **Name:** VM was deleted
+   - Configured the alert rule details:
+     - **Alert rule name:** VM was deleted
+     - **Description:** A VM in your resource group was deleted
+     - Enabled the alert rule upon creation.
+
+3. **Delete the Virtual Machine:**
+   - Selected **Virtual machines** from the Azure portal menu and checked the box for **vm1**.
+   - Deleted the VM by confirming with "delete".
+
+4. **View Your Activity Log Alerts in Azure Monitor:**
+   - Checked for a notification email about the alert activation.
+   - Monitored the alerts in **Monitor** > **Alerts**.
+   - Reviewed alert details for the triggered alerts.
+
+5. **Add an Alert Processing Rule:**
+   - Navigated to **Monitor** > **Alerts** > **Alert processing rules**.
+   - Created a new alert processing rule to suppress notifications during planned maintenance with the following settings:
+     - **Apply the rule:** At a specific time
+     - **Start:** Today's date at 10pm
+     - **End:** Tomorrow's date at 7am
+     - **Resource group:** Selected sandbox resource group
+     - **Rule name:** Planned Maintenance
+     - **Description:** Suppress notifications during planned maintenance
+The activity log alert and action group were successfully created to notify users about critical events in the Azure infrastructure.
