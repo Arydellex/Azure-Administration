@@ -1,0 +1,76 @@
+🔷 Create Custom Routes
+
+📌 Objective:
+To control how network traffic is routed across Azure infrastructure using custom routes and network virtual appliances (NVA).
+
+📌 Why does this matter?
+Custom routing ensures secure and efficient network traffic flow, enhancing security and performance by directing traffic through specific paths.
+
+📌 Use cases:
+- Organizations implementing advanced security strategies
+- IT departments managing network traffic flow
+- Ensuring secure communication between public and private subnets
+
+📌 Steps to completion:
+1. **Create a Route Table and Custom Route:**
+   - Created a route table using the following command:
+   ```bash
+   az network route-table create \
+       --name publictable \
+       --resource-group "[sandbox resource group name]" \
+       --disable-bgp-route-propagation false
+
+    Added a custom route:
+
+bash
+az network route-table route create \
+    --route-table-name publictable \
+    --resource-group "[sandbox resource group name]" \
+    --name productionsubnet \
+    --address-prefix 10.0.1.0/24 \
+    --next-hop-type VirtualAppliance \
+    --next-hop-ip-address 10.0.2.4
+
+    Create a Virtual Network and Subnets:
+
+        Created the virtual network and public subnet:
+    bash
+az network vnet create \
+    --name vnet \
+    --resource-group "[sandbox resource group name]" \
+    --address-prefixes 10.0.0.0/16 \
+    --subnet-name publicsubnet \
+    --subnet-prefixes 10.0.0.0/24
+   
+Created the private subnet:
+
+bash
+az network vnet subnet create \
+    --name privatesubnet \
+    --vnet-name vnet \
+    --resource-group "[sandbox resource group name]" \
+    --address-prefixes 10.0.1.0/24
+
+Created the DMZ subnet:
+az network vnet subnet create \
+    --name dmzsubnet \
+    --vnet-name vnet \
+    --resource-group "[sandbox resource group name]" \
+    --address-prefixes 10.0.2.0/24
+
+Listed all subnets in the virtual network:
+az network vnet subnet list \
+    --resource-group "[sandbox resource group name]" \
+    --vnet-name vnet \
+    --output table
+
+Associate the Route Table with the Public Subnet:
+
+    Associated the route table with the public subnet:
+az network vnet subnet update \
+    --name publicsubnet \
+    --vnet-name vnet \
+    --resource-group "[sandbox resource group name]" \
+    --route-table publictable
+
+The custom routes were successfully created and configured to route traffic securely and efficiently.
