@@ -1,0 +1,63 @@
+🔷 Viewing Activity Logs for Azure RBAC Changes Work Sample
+🎯 Objective:
+
+This work sample demonstrates my ability to use the Azure Activity Log to track and review changes related to Azure Role-Based Access Control (RBAC). I generated a report of role assignment and custom role definition changes over the past month, showcasing my skills in auditing and troubleshooting access management in Azure.
+❓ Why does this matter?
+
+Auditing RBAC changes is essential for maintaining security, compliance, and accountability in Azure. By reviewing activity logs, organizations can identify unauthorized changes, troubleshoot issues, and ensure adherence to access policies.
+💡 Use cases:
+
+    Auditing role assignments and custom role definitions for compliance.
+
+    Troubleshooting access-related issues by reviewing historical changes.
+
+    Generating reports for quarterly or ad-hoc reviews.
+
+🛠️ Steps to completion:
+
+    Accessed the Activity Log: Navigated to the Azure Activity Log to view RBAC-related changes.
+
+    Filtered logs: Applied filters to focus on role assignment and custom role definition changes.
+
+    Generated a report: Downloaded the activity log as a CSV file for further analysis.
+
+🚀 Work Sample: Auditing Azure RBAC Changes
+1. Accessing the Activity Log
+
+I accessed the Azure Activity Log using the following steps:
+
+    Signed into the Azure portal.
+
+    Selected All services and searched for Activity log.
+
+    Clicked Activity log to open the log.
+
+2. Filtering logs
+
+I applied filters to focus on RBAC-related changes:
+
+    Set the Timespan filter to Last month.
+
+    Added an Operation filter and typed role.
+
+    Selected the following operations:
+
+        Create role assignment (roleAssignments)
+
+        Delete role assignment (roleAssignments)
+
+        Create or update custom role definition (roleDefinitions)
+
+        Delete custom role definition (roleDefinitions)
+
+3. Generating a report
+
+After filtering, I reviewed the list of RBAC changes and downloaded the activity log as a CSV file for further analysis:
+
+    Clicked the Download as CSV button at the top of the screen.
+
+    Selected a specific operation to view detailed activity log information.
+
+🎉 Conclusion
+
+This work sample highlights my ability to use the Azure Activity Log to audit RBAC changes. By filtering and generating reports, I can effectively monitor access management activities, ensuring compliance and security in Azure environments.
