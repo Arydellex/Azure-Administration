@@ -1,0 +1,65 @@
+🔷 Restoring or Removing Deleted Users and Managing Groups in Microsoft Entra ID Work Sample
+🎯 Objective:
+
+This work sample demonstrates my ability to manage user lifecycle operations in Microsoft Entra ID, including deleting and restoring users. Additionally, I created a Microsoft 365 group to showcase my skills in group management and organization.
+❓ Why does this matter?
+
+Efficient user and group management is essential for maintaining security, compliance, and productivity in an organization. Understanding how to delete, restore, and manage users and groups ensures that access to resources is properly controlled and that accidental deletions can be quickly rectified.
+💡 Use cases:
+
+    Removing users who no longer require access to organizational resources.
+
+    Restoring accidentally deleted users within the 30-day window.
+
+    Creating and managing Microsoft 365 groups for collaboration and resource sharing.
+
+🛠️ Steps to completion:
+
+    Delete a user: Removed a user (Chris Green) from Microsoft Entra ID.
+
+    Restore a user: Restored the deleted user within the 30-day window.
+
+    Create a Microsoft 365 group: Created a group named Northwest Sales and assigned members.
+
+🚀 Work Sample: User Lifecycle and Group Management
+1. Deleting a user
+
+I deleted the user Chris Green from Microsoft Entra ID using the following steps:
+
+    Navigated to Microsoft Entra admin center > Identity > Users.
+
+    Selected Chris Green from the All users list.
+
+    Clicked Delete user and confirmed the action.
+
+The user was successfully removed from the All users list.
+2. Restoring a deleted user
+
+I restored the deleted user Chris Green within the 30-day window:
+
+    Navigated to Microsoft Entra admin center > Identity > Users > Deleted users.
+
+    Selected Chris Green from the list of deleted users.
+
+    Clicked Restore user and confirmed the action.
+
+    Verified that Chris Green reappeared in the All users list.
+
+3. Creating a Microsoft 365 group
+
+I created a Microsoft 365 group named Northwest Sales with the following details:
+
+    Group type: Microsoft 365
+
+    Group name: Northwest Sales
+
+    Membership type: Assigned
+
+    Owner: My administrator account
+
+    Members: Assigned a member to the group
+
+After creation, I refreshed the All groups list and verified that the Northwest Sales group was displayed.
+🎉 Conclusion
+
+This work sample highlights my ability to manage user lifecycle operations and groups in Microsoft Entra ID. By deleting and restoring users, I ensured proper access control and quick recovery from accidental deletions. Additionally, creating a Microsoft 365 group demonstrated my skills in organizing users for collaboration and resource sharing.
