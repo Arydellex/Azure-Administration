@@ -1,0 +1,65 @@
+🔷 Managing Group License Assignments and Resolving Errors in Microsoft Entra ID Work Sample
+🎯 Objective:
+
+This work sample demonstrates my ability to manage group-based licensing in Microsoft Entra ID, including changing license assignments, resolving licensing errors, and migrating users from individual licenses to group licenses. It also highlights my understanding of common licensing issues and their solutions.
+❓ Why does this matter?
+
+Group-based licensing simplifies license management by assigning licenses to groups rather than individual users. However, errors can occur due to insufficient licenses, conflicting service plans, or unsupported usage locations. Resolving these issues ensures users have uninterrupted access to Microsoft 365 services.
+💡 Use cases:
+
+    Assigning and modifying licenses for groups in Microsoft Entra ID.
+
+    Identifying and resolving common licensing errors (e.g., insufficient licenses, conflicting service plans).
+
+    Migrating users from individual licenses to group-based licenses seamlessly.
+
+🛠️ Steps to completion:
+
+    Change group license assignments: Updated license assignments for a group in Microsoft Entra ID.
+
+    Identify and resolve licensing errors: Addressed issues such as insufficient licenses and conflicting service plans.
+
+    Migrate users to group-based licensing: Transitioned users from individual licenses to group licenses without service disruption.
+
+🚀 Work Sample: Managing Group Licenses and Resolving Errors
+1. Changing group license assignments
+
+I updated the license assignments for a group in Microsoft Entra ID using the following steps:
+
+    Navigated to the Microsoft Entra admin center and selected Groups > All groups.
+
+    Chose a group (e.g., Marketing) and selected Licenses under the Manage section.
+
+    Clicked + Assignments to add a new license.
+
+    Opened the Microsoft 365 admin center and navigated to Billing > Licenses.
+
+    Selected an available license and assigned it to the Marketing group.
+
+    Verified the license assignment in both the Microsoft Entra admin center and Microsoft 365 admin center.
+
+2. Identifying and resolving licensing errors
+
+I addressed common licensing errors, such as:
+
+    Insufficient licenses: Checked the number of available licenses in Microsoft Entra ID > Billing > Licenses > All products and purchased additional licenses as needed.
+
+    Conflicting service plans: Resolved conflicts by disabling overlapping service plans (e.g., SharePoint Online Plan 1 vs. Plan 2).
+
+    Unsupported usage locations: Updated the Usage location property for users in unsupported regions.
+
+3. Migrating users to group-based licensing
+
+I migrated users from individual licenses to group-based licenses using the following process:
+
+    Created a new licensing group (e.g., All Users) and added all required users as members.
+
+    Assigned the necessary licenses (e.g., Office 365 Enterprise E3) to the group.
+
+    Verified that licenses were applied to all users by checking the Processing state and Audit Logs.
+
+    Removed direct license assignments from users after confirming that group-based licenses were successfully applied.
+
+🎉 Conclusion
+
+This work sample highlights my ability to manage group-based licensing in Microsoft Entra ID, resolve common licensing errors, and migrate users from individual licenses to group licenses. These skills are essential for ensuring efficient license management and uninterrupted access to Microsoft 365 services.
