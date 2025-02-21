@@ -1,0 +1,80 @@
+🔷 Route Traffic Through the NVA
+
+📌 Objective:
+To route network traffic through a network virtual appliance (NVA) for monitoring and securing communication between public and private subnets.
+
+📌 Why does this matter?
+Routing traffic through an NVA enhances network security by allowing for the monitoring and control of traffic between different network segments.
+
+📌 Use cases:
+- Organizations implementing advanced security strategies
+- IT departments managing secure communication between network segments
+- Ensuring monitored and controlled traffic flow across subnets
+
+📌 Steps to completion:
+1. **Create Public and Private Virtual Machines:**
+   - Opened the Cloud Shell editor and created a file named `cloud-init.txt` with the following content:
+   ```yaml
+   #cloud-config
+   package_upgrade: true
+   packages:
+      - inetutils-traceroute
+
+Deployed the public VM:
+az vm create \
+    --resource-group "[sandbox resource group name]" \
+    --name public \
+    --vnet-name vnet \
+    --subnet publicsubnet \
+    --image Ubuntu2204 \
+    --admin-username azureuser \
+    --no-wait \
+    --custom-data cloud-init.txt \
+    --admin-password <password>
+
+Deployed the private VM:
+az vm create \
+    --resource-group "[sandbox resource group name]" \
+    --name private \
+    --vnet-name vnet \
+    --subnet privatesubnet \
+    --image Ubuntu2204 \
+    --admin-username azureuser \
+    --no-wait \
+    --custom-data cloud-init.txt \
+    --admin-password <password>
+
+Monitored VM deployment:
+watch -d -n 5 "az vm list \
+    --resource-group '[sandbox resource group name]' \
+    --show-details \
+    --query '[*].{Name:name, ProvisioningState:provisioningState, PowerState:powerState}' \
+    --output table"
+
+Saved public IP addresses:
+PUBLICIP="$(az vm list-ip-addresses \
+    --resource-group '[sandbox resource group name]' \
+    --name public \
+    --query '[].virtualMachine.network.publicIpAddresses[*].ipAddress' \
+    --output tsv)"
+echo $PUBLICIP
+
+PRIVATEIP="$(az vm list-ip-addresses \
+    --resource-group '[sandbox resource group name]' \
+    --name private \
+    --query '[].virtualMachine.network.publicIpAddresses[*].ipAddress' \
+    --output tsv)"
+echo $PRIVATEIP
+
+
+Test Traffic Routing Through the NVA:
+
+    Traced the route from public to private:
+
+ssh -t -o StrictHostKeyChecking=no azureuser@$PUBLICIP 'traceroute private --type=icmp; exit'
+
+Traced the route from private to public:
+
+ssh -t -o StrictHostKeyChecking=no azureuser@$PRIVATEIP 'traceroute public --type=icmp; exit'
+
+The traffic was successfully routed through the NVA, ensuring secure and monitored communication between subnets.
