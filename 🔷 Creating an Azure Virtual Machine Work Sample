@@ -1,0 +1,78 @@
+🔷 Creating an Azure Virtual Machine Work Sample
+🎯 Objective:
+
+This work sample demonstrates my ability to create an Azure Virtual Machine (VM) using the Azure portal. It highlights my understanding of resource groups and how Azure organizes resources associated with a VM. This exercise also emphasizes the importance of resource management to avoid unnecessary costs.
+❓ Why does this matter?
+
+Creating and managing virtual machines is a fundamental skill for cloud administrators and developers. Understanding how Azure organizes resources within resource groups ensures efficient resource management and cost control.
+💡 Use cases:
+
+    Deploying virtual machines for development, testing, or production environments.
+
+    Managing associated resources (e.g., storage accounts, virtual networks) within a resource group.
+
+    Cleaning up resources to avoid unnecessary costs.
+
+🛠️ Steps to completion:
+
+    Created a virtual machine: Used the Azure portal to create a VM named my-VM.
+
+    Verified resources: Checked the resource group to confirm the creation of associated resources.
+
+    Cleaned up resources: Allowed the sandbox to automatically clean up resources after completion.
+
+🚀 Work Sample: Creating and Managing Azure Resources
+1. Creating a virtual machine
+
+I created a virtual machine in the Azure portal using the following steps:
+
+    Signed into the Azure portal.
+
+    Navigated to Create a resource > Virtual Machine > Create.
+
+    Configured the VM with the following settings:
+
+        Subscription: Concierge Subscription
+
+        Resource group: Selected the resource group provided by the Learn sandbox.
+
+        Virtual machine name: my-VM
+
+        Authentication type: Password
+
+        Username: azureuser
+
+        Password: Entered a secure password
+
+        Public inbound ports: None
+
+    Clicked Review and Create, then Create to provision the VM.
+
+2. Verifying resources
+
+After the VM was deployed, I verified the associated resources:
+
+    Navigated to Home > Resource groups.
+
+    Selected the sandbox resource group.
+
+    Reviewed the list of resources, which included:
+
+        The VM (my-VM)
+
+        A network interface
+
+        A public IP address
+
+        A network security group
+
+        A virtual network and subnet
+
+        A storage account (pre-existing for the sandbox)
+
+3. Cleaning up resources
+
+Since this exercise was completed in the Learn sandbox, the resources were automatically cleaned up after the module ended. In a real-world scenario, I would manually delete resources or the entire resource group to avoid unnecessary costs.
+🎉 Conclusion
+
+This work sample showcases my ability to create and manage Azure virtual machines and associated resources. By understanding how Azure organizes resources within resource groups, I can efficiently manage cloud infrastructure and control costs.
