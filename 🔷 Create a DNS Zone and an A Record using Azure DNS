@@ -1,0 +1,35 @@
+🔷 Create a DNS Zone and an A Record using Azure DNS
+
+📌 Objective:
+To set up an Azure DNS and create a public DNS zone, followed by creating an A record to ensure proper domain resolution.
+
+📌 Why does this matter?
+DNS zones and records are crucial for directing traffic to your servers and ensuring that domain names resolve to the correct IP addresses, enhancing web accessibility and reliability.
+
+📌 Use cases:
+- Organizations hosting websites and services on Azure
+- IT departments managing domain configurations
+- Ensuring proper DNS resolution for web servers
+
+📌 Steps to completion:
+1. **Create a DNS Zone:**
+   - Signed in to the Azure portal.
+   - Searched for and selected **DNS zone** by Microsoft.
+   - Created a DNS zone with the name **wideworldimportsXXXX.com** (replacing "XXXX" with unique characters).
+
+2. **Configure the DNS Zone:**
+   - Selected **Record Sets** and noted the NS record values.
+   
+3. **Create a DNS Record (A Record):**
+   - Opened the **Record sets** pane and added a new record.
+   - Configured the record with the following values:
+     - **Name:** www
+     - **Type:** A
+     - **TTL:** 1 hour
+     - **IP Address:** 10.10.10.10 (in a real-world scenario, this would be the public IP of the web server)
+
+4. **Verify DNS Configuration:**
+   - Used the **nslookup** tool in Cloud Shell to verify the DNS configuration.
+   - Confirmed that the hostname **www.wideworldimportsXXXX.com** resolved to **10.10.10.10**.
+
+Congratulations! The DNS zone and A record were successfully set up and verified.
